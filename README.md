@@ -55,13 +55,17 @@ This trading platform provides instant, on-demand access to real-time and histor
 **Key Features**
 
 **Market Segmentation:** Stocks are neatly categorized by market cap and liquidity ranking, so users can pinpoint relevant symbols faster.
+
 **Advanced Indicators:** Custom calculations of SMA, EMA, WMA, Bollinger Bands, MACD etc..—tested for ~99.5% accuracy—give traders deeper insights into price trends and volatility.
+
 **Unified Data Access:** Both real-time streams and historical records are consolidated into one platform, eliminating the hassle of scattered data sources.
 
 **Benefits**
 
 **Immediate Insights:** Traders can access critical metrics and charts instantly, accelerating decision-making.
+
 **Enhanced Accuracy:** Rigorous testing ensures reliable indicators and minimizes analytical errors.
+
 **Better Strategy Formation:** By combining historical context with up-to-the-second data, users can craft more informed trading strategies in one integrated environment.
 
    
