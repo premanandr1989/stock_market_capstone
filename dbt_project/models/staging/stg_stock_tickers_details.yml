@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_stock_tickers_details
+    description: All stock tickers details with more columns such as market cap sic codes etc
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - unique
+          - not_null
+      - name: type
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: market_cap
+        data_type: float
+        description: ""
+
+      - name: sic_code
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: sic_description
+        data_type: varchar
+        description: ""
+
+      - name: branding_icon_url
+        data_type: varchar
+        description: ""
+
+      - name: branding_logo_url
+        data_type: varchar
+        description: ""
+

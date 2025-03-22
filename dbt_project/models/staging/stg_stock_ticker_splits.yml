@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_stock_ticker_splits
+    description: All stock tickers splits details whenever that occured
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: split_from
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: split_to
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: date
+        data_type: date
+        description: ""
+        data_tests:
+          - not_null

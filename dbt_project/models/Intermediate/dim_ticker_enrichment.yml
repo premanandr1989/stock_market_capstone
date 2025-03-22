@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_ticker_enrichment
+    description: Enriched and complete details for each ticker
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: active
+        data_type: boolean
+        description: ""
+        data_tests:
+          - not_null
+      - name: sic_code
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: office
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: industry
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: PRIMARY_EXCHANGE
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+

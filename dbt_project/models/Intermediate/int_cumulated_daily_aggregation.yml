@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: int_cumulated_daily_aggregation
+    description: Monthly aggregated stock data with daily details in composite column
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "ticker", "month_num", "year" ]
+
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: year
+        description: "Year of the data"
+        tests:
+          - not_null
+
+      - name: month_num
+        description: "Month number (1-12)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12]
+
+      - name: composite_col
+        description: "Array of daily OHLCV data"
+        tests:
+          - not_null
+          - custom_test_array_not_empty
+
+      - name: record_count
+        description: "count of records check"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_value_lengths_to_be_between:
+              min_value: 1
+              max_value: 31 # (Optional)
+
+      - name: first_date
+        description: "first_date of each month check"
+        tests:
+          - not_null
+
+      - name: last_date
+        description: "last_date of each month check"
+        tests:
+          - not_null

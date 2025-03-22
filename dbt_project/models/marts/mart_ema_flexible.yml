@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: mart_ema_flexible
+    description: Daily ema data for various lookback periods
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "ticker", "date" ]
+
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: date
+        description: "date"
+        tests:
+          - not_null
+
+      - name: close
+        description: "close_price"
+        tests:
+          - not_null
+
+      - name: ema_10
+        description: "ema_10 value"
+        tests:
+          - not_null
+
+      - name: ema_20
+        description: "ema_20 value"
+        tests:
+          - not_null
+
+      - name: ema_50
+        description: "ema_50 value"
+        tests:
+          - not_null
+
+      - name: ema_100
+        description: "ema_100 value"
+        tests:
+          - not_null
+
+      - name: ema_200
+        description: "ema_200 value"
+        tests:
+          - not_null

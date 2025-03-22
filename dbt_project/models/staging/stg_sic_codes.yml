@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_sic_codes
+    description: SIC codes mapping to get industry level slicing
+    columns:
+      - name: code
+        data_type: number
+        description: ""
+        data_tests:
+          - unique
+          - not_null
+      - name: office
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: industry
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null

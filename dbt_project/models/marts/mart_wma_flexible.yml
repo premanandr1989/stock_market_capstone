@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: mart_wma_flexible
+    description: Daily wma data for various lookback periods
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "ticker", "date" ]
+
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: date
+        description: "date"
+        tests:
+          - not_null
+
+      - name: close
+        description: "close_price"
+        tests:
+          - not_null
+
+      - name: wma_10
+        description: "wma_10 value"
+        tests:
+          - not_null
+
+      - name: wma_20
+        description: "wma_20 value"
+        tests:
+          - not_null
+
+      - name: wma_50
+        description: "wma_50 value"
+        tests:
+          - not_null
+
+      - name: wma_100
+        description: "wma_100 value"
+        tests:
+          - not_null
+
+      - name: wma_200
+        description: "wma_200 value"
+        tests:
+          - not_null

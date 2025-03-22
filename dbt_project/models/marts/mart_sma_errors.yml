@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: mart_sma_errors
+    description: daily sma calculations for lookback periods 10 20 50 100 and 200
+    tests:
+      - check_severity_errors:
+          severity: warn

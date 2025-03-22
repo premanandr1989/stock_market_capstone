@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_candlestick_flexible
+    description: Monthly aggregated stock data with daily details in composite column
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "ticker", "month_num", "year" ]
+
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: year
+        description: "Year of the data"
+        tests:
+          - not_null
+
+      - name: month_num
+        description: "Month number (1-12)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12]
+
+      - name: composite_col
+        description: "Array of daily OHLCV data"
+        tests:
+          - not_null
+          - custom_test_array_not_empty

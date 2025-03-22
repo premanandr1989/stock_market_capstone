@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_earnings_calendar
+    description: Earnings Tracker
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: year
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: date
+        data_type: DATE
+        description: ""
+        data_tests:
+          - not_null
+      - name: hour
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: quarter
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: epsActual
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: epsEstimate
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: revenueActual
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: revenueEstimate
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null

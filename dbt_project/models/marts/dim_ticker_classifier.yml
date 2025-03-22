@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_ticker_classifier
+    description: Ticker classifier based on last 5 month performance
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: name
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: market_cap_category
+        data_type: varchar
+        description: ""
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Mega Cap','Large Cap','Mid Cap','Small Cap','Micro Cap']
+      - name: overall_rank
+        description: ""
+        data_tests:
+          - not_null

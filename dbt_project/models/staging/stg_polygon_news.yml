@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_polygon_news
+    description: Recent sentiment insights for each ticker from Jan 2025
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: sentiment
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['negative','positive','neutral','mixed']
+      - name: sentiment_reasoning
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: date
+        data_type: date
+        description: ""
+        data_tests:
+          - not_null
+      - name: article_url
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null

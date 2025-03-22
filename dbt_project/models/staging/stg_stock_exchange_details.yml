@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_stock_exchange_details
+    description: All stock exchange details
+    columns:
+      - name: id
+        data_type: integer
+        description: ""
+        data_tests:
+          - unique
+          - not_null
+      - name: type
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: asset_class
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: locale
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: name
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: operating_mic
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: url
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null

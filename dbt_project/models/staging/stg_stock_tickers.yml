@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_stock_tickers
+    description: All stock tickers details
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: market
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['stocks']
+      - name: type
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: active
+        data_type: boolean
+        description: ""
+        data_tests:
+          - not_null

@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: PREM
+    database: dataexpert_student
+    schema: PREM
+    tables:
+      - name: polygon_news
+      - name: sic_codes
+      - name: stock_daily_agg
+      - name: stock_tickers
+      - name: stock_ticker_splits
+      - name: stock_tickers_details_enriched
+      - name: stock_exchange_details
+      - name: mart_sma_errors
+      - name: earnings_calendar
+      - name: earnings_surprises
+      - name: stock_graders
+

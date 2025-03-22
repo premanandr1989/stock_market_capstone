@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_stock_daily_agg
+    description: Daily stock aggregates for all stock tickers active during the last 5 years historic data
+    tests:
+      - colA_greater_equal_colB:
+          column_A: high
+          column_B: low
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "date", "ticker" ]
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: volume
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+          - is_positive:
+              severity: warn
+      - name: open
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: close
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: high
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: low
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: date
+        data_type: date
+        description: ""
+        data_tests:
+          - not_null
+      - name: transactions
+        data_type: bigint
+        description: ""
+        data_tests:
+          - not_null
+          - is_positive:
+                severity: warn

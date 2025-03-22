@@ -1,0 +1,6 @@
+websockets==10.4
+redis==4.5.1
+python-dotenv==1.0.0
+redis==4.5.1
+polygon-api-client==1.14.4
+requests==2.32.3

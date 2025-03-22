@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_earnings_surprises
+    description: Earnings Surprises Tracker
+    columns:
+      - name: ticker
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+      - name: year
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: date
+        data_type: DATE
+        description: ""
+        data_tests:
+          - not_null
+      - name: quarter
+        data_type: integer
+        description: ""
+        data_tests:
+          - not_null
+      - name: actual
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: estimate
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: surprise
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null
+      - name: surprisePercent
+        data_type: double
+        description: ""
+        data_tests:
+          - not_null

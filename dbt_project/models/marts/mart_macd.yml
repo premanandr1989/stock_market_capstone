@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_macd
+    description: MACD indicators
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: [ "ticker", "date" ]
+
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+
+      - name: date
+        description: "date"
+        tests:
+          - not_null
+
+      - name: close
+        description: "close_price"
+        tests:
+          - not_null
+
+      - name: macd_line
+        description: "macd_tracker"
+        tests:
+          - not_null
+
+      - name: macd_histogram
+        description: "histogram"
+        tests:
+          - not_null
+
+      - name: signal_line
+        description: "signal line"
+        tests:
+          - not_null
